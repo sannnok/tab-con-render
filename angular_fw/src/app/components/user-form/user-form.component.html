@@ -1,0 +1,15 @@
+<div class="form-container">
+  <h3>Add Person</h3>
+  <form [formGroup]="form" (ngSubmit)="onSubmit()" (keydown.enter)="onSubmit()">
+    <input placeholder="First name" formControlName="firstName">
+    <input placeholder="Last name" formControlName="lastName">
+    <input placeholder="Email" formControlName="email">
+    <input placeholder="Phone" formControlName="phone">
+    <select name="gender" formControlName="gender">
+      <option value="">--Please choose an option--</option>
+      <option value="M">M</option>
+      <option value="F">F</option>
+    </select>
+  </form>
+  <button type="submit" (click)="onSubmit()" [disabled]="!form.valid">Add Person</button>
+</div>

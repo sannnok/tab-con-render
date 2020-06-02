@@ -1,0 +1,8 @@
+<h3>Person List</h3>
+<ul>
+  <ng-template ngFor let-person [ngForOf]="coreService.personCollection">
+    <li (click)="selectItem(person)" [class.selected]="person.selected">
+      {{ person.firstName }} {{ person.lastName }}
+    </li>
+  </ng-template>
+</ul>
