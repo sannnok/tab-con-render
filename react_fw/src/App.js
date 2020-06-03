@@ -16,6 +16,9 @@ const App = () => {
   }, []);
 
   const pickPerson = (person) => {
+    let mappedUsers = [...users];
+    mappedUsers = users.forEach(u => u.selected = u.lastName === person.lastName ? true : false)
+    setUsers(users)
     setSelectedUser(person);
   };
 
