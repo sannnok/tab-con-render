@@ -1,0 +1,24 @@
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 1px 1px;
+  grid-template-areas: "add-user live-template" "user-list user-card";
+  min-height: 100vh;
+  padding: 24px;
+
+  .live-template,
+  .add-user,
+  .user-list,
+  .user-card {
+    padding: 16px;
+  } 
+}
+
+.live-template { grid-area: live-template; }
+
+.add-user { grid-area: add-user; }
+
+.user-list { grid-area: user-list; }
+
+.user-card { grid-area: user-card; }

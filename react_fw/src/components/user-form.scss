@@ -1,0 +1,20 @@
+.form-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+
+  form {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 auto;
+    input,
+    select {
+      height: 36px;
+      margin-bottom: 4px;
+    }
+  }
+
+  button {
+    flex: 4 1 auto;
+  }
+}
