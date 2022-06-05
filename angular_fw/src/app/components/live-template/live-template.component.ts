@@ -1,14 +1,14 @@
-import { AfterViewChecked, AfterViewInit, ChangeDetectorRef, Component, ElementRef, OnInit, QueryList, ViewChild, ViewChildren } from '@angular/core';
+import { AfterViewInit, ChangeDetectorRef, Component } from '@angular/core';
 import { HLJSApi } from 'highlight.js';
-import { fromEvent, Observable, Subject } from 'rxjs';
-import { debounceTime } from 'rxjs/operators';
+import { interval, Subject } from 'rxjs';
+import { debounceTime, delay, takeUntil } from 'rxjs/operators';
 import { CoreService } from 'src/app/services/core.service';
 declare var hljs: HLJSApi;
 
 @Component({
   selector: 'app-live-template',
   templateUrl: './live-template.component.html',
-  styleUrls: ['./live-template.component.css']
+  styleUrls: ['./live-template.component.scss']
 })
 export class LiveTemplateComponent implements AfterViewInit {
 
@@ -19,11 +19,15 @@ export class LiveTemplateComponent implements AfterViewInit {
 
   ngAfterViewInit() {
     document.getElementById('pre').addEventListener('input', e => this.tick$.next(e));
-    this.tick$.pipe(debounceTime(200)).subscribe(this.applyChanges.bind(this))
+    this.tick$.pipe(debounceTime(200)).subscribe(this.updateTemplateModel.bind(this));
+    this.tick$.pipe(debounceTime(10000)).subscribe(this.highlightTheCode.bind(this));
   }
 
-  applyChanges(e: any) {
+  private updateTemplateModel(e: any) {
     this.coreService.htmlString = e.srcElement.textContent;
-    hljs.highlightBlock(document.getElementById('pre'))
+  }
+
+  private highlightTheCode() {
+    hljs.highlightBlock(document.getElementById('pre'));
   }
 }
