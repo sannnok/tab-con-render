@@ -9,8 +9,8 @@ import { User } from './interfaces/user';
 })
 export class UserCardComponent implements OnInit {
 
-  @ViewChild('vc', { read: ViewContainerRef, static: true })
-  private vc: ViewContainerRef;
+  @ViewChild('vc', { read: ViewContainerRef, static: true }) private vc: ViewContainerRef;
+
   private cmpRef: ComponentRef<any>;
   private person: User;
 

@@ -1,4 +1,20 @@
-textarea {
+#code {
   width: 100%;
+  background: white;
+  border: 1px solid lightgrey;
+  height: 100%;
+  margin: -30px 0;
+  padding: 0.5rem;
+}
+
+pre {
+  margin: 0;
   height: calc(100% - 62px);
+  background: white;
+  padding: 0;
+}
+code {
+  height: 100%;
+  background: white;
+  padding: 0;
 }
