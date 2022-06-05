@@ -21,6 +21,8 @@ export class CoreService {
       return;
     }
 
+    console.log('Template changes registered')
+
     this._htmlString = val;
     this.userPick.emit();
   }

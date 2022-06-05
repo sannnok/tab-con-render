@@ -1,4 +1,7 @@
 <h3>Card Template</h3>
-<textarea name="HTML Template" id="ht" cols="30" rows="10"
-  [(ngModel)]="coreService.htmlString"></textarea>
-  
+<pre id="pre"><code>
+  <div id="code"
+    contenteditable="true"
+    [innerText]="coreService.htmlString">
+  </div>
+</code></pre>
