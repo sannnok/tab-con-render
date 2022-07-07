@@ -58,8 +58,7 @@ export class CoreService {
     return new Promise(resolve => {
       this.compiler.compileModuleAndAllComponentsAsync(tmpModule)
         .then(factories => {
-          resolve(factories.componentFactories[0]
-            .create(this.injector, [], null, this.m));
+          resolve(factories.componentFactories[0].create(this.injector));
         });
     });
   }

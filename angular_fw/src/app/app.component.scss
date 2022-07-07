@@ -19,3 +19,15 @@
 .user-list { grid-area: user-list; }
 
 .user-card { grid-area: user-card; }
+
+@media (max-width: 599px) {
+  .grid-container {
+    grid-template-columns: 100%;
+    grid-template-rows: repeat(4, 1fr);
+    grid-template-areas: "user-card" "user-list" "live-template" "add-user";
+
+    div {
+      padding: initial;
+    }
+  }
+ }

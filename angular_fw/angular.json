@@ -42,6 +42,8 @@
                   "with": "src/environments/environment.prod.ts"
                 }
               ],
+              "baseHref": "https://sannnok.github.io/tab-con-render/",
+              "outputPath": "../docs",
               "optimization": true,
               "outputHashing": "all",
               "sourceMap": false,
